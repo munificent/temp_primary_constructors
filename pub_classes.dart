@@ -1,11 +1,12 @@
-// Using the current primary constructors proposal.
+// Using the current primary constructors proposal except that field parameters
+// must be explicitly marked `final` or `var`.
 
 // iconoir_flutter-7.1.0/lib/regular/scanning.dart:5
 class const Scanning({
   super.key,
-  widgets.Color? color,
-  double? width,
-  double? height,
+  final widgets.Color? color,
+  final double? width,
+  final double? height,
 }) extends widgets.StatelessWidget {
   @override
   widgets.Widget build(widgets.BuildContext context) => SvgPicture.string(
@@ -31,25 +32,25 @@ class const Scanning({
 
 // zwap_design_system-0.1.787/lib/ext_packages/calendar_date_picker_2/src/widgets/calendar_date_picker2_with_action_buttons.dart:6
 class const CalendarDatePicker2WithActionButtons({
-  required List<DateTime?> initialValue,
+  required final List<DateTime?> initialValue,
 
   /// The calendar configurations including action buttons
-  required CalendarDatePicker2WithActionButtonsConfig config,
+  required final CalendarDatePicker2WithActionButtonsConfig config,
 
   /// Called when the user taps 'OK' button
-  ValueChanged<List<DateTime?>>? onValueChanged,
+  final ValueChanged<List<DateTime?>>? onValueChanged,
 
   /// Called when the user navigates to a new month/year in the picker.
-  ValueChanged<DateTime>? onDisplayedMonthChanged,
+  final ValueChanged<DateTime>? onDisplayedMonthChanged,
 
   /// Function to provide full control over which dates in the calendar can be selected.
-  SelectableDayPredicate? selectableDayPredicate,
+  final SelectableDayPredicate? selectableDayPredicate,
 
   /// The callback when cancel button is tapped
-  Function? onCancelTapped,
+  final Function? onCancelTapped,
 
   /// The callback when ok button is tapped
-  Function? onOkTapped,
+  final Function? onOkTapped,
 
   super.key,
 }) extends StatefulWidget {
@@ -78,17 +79,17 @@ class AddPostRequest {
 
 // tencent_cloud_chat_push-1.0.0-preview.0/lib/common/common_defines.dart:1
 class TencentCloudChatPushResult<T>({
-  required int code,
-  String? errorMessage,
-  T? data,
+  required var int code,
+  var String? errorMessage,
+  var T? data,
 });
 
 // zego_plugin_adapter-2.9.1/lib/src/signaling/defines.dart:10
 /// @nodoc
 /// room properties operation result
 class const ZegoSignalingPluginRoomPropertiesOperationResult({
-  required List<String> errorKeys,
-  PlatformException? error,
+  required final List<String> errorKeys,
+  final PlatformException? error,
 }) {
   @override
   String toString() => '{errorKeys: $errorKeys, error: $error}';
@@ -98,10 +99,10 @@ class const ZegoSignalingPluginRoomPropertiesOperationResult({
 /// @nodoc
 class const ZegoDisableChatButton({
   super.key,
-  ButtonIcon? enableIcon,
-  ButtonIcon? disableIcon,
-  Size? iconSize,
-  Size? buttonSize,
+  final ButtonIcon? enableIcon,
+  final ButtonIcon? disableIcon,
+  final Size? iconSize,
+  final Size? buttonSize,
 }) extends StatefulWidget {
   @override
   State<ZegoDisableChatButton> createState() => _ZegoDisableChatButtonState();
@@ -110,9 +111,9 @@ class const ZegoDisableChatButton({
 // katana_model-2.15.5/lib/src/model_field_value.dart:1294
 @immutable
 class const _ModelDateWithDateTime(
-  int year, [
-  int? month,
-  int? day,
+  final int year, [
+  final int? month,
+  final int? day,
 ]) extends _ModelDate {
   @override
   DateTime? get _value {
@@ -126,16 +127,16 @@ class const _ModelDateWithDateTime(
 
 // vietmap_flutter_gl-1.3.0/example/lib/sources.dart:7
 class const StyleInfo({
-  required String name,
-  required String baseStyle,
-  required Future<void> Function(VietmapController) addDetails,
-  required CameraPosition position,
+  required final String name,
+  required final String baseStyle,
+  required final Future<void> Function(VietmapController) addDetails,
+  required final CameraPosition position,
 });
 
 // sqlparser-0.33.0/lib/src/ast/schema/column_definition.dart:149
 class CheckColumn(
   super.name,
-  Expression expression,
+  var Expression expression,
 ) extends ColumnConstraint {
   @override
   Iterable<AstNode> get childNodes => [expression];
@@ -163,9 +164,9 @@ class _MatrixIterable extends IterableBase<List<dynamic>> {
 
 // sqlparser-0.33.0/lib/src/ast/clauses/limit.dart:8
 class Limit({
-  required Expression count,
-  Token? offsetSeparator, // can either be OFFSET or just a comma
-  Expression? offset,
+  required var Expression count,
+  var Token? offsetSeparator, // can either be OFFSET or just a comma
+  var Expression? offset,
 }) extends AstNode implements LimitBase {
   @override
   R accept<A, R>(AstVisitor<A, R> visitor, A arg) {
@@ -196,17 +197,18 @@ class Limit({
 @ExchangeableObject()
 class HttpAuthenticationChallenge_({
   ///A count of previous failed authentication attempts.
-  required int previousFailureCount,
+  required var int previousFailureCount,
   required super.protectionSpace,
 
   ///Use [failureResponse] instead.
-  @Deprecated("Use failureResponse instead") IOSURLResponse_? iosFailureResponse,
+  @Deprecated("Use failureResponse instead")
+  var IOSURLResponse_? iosFailureResponse,
 
   ///The URL response object representing the last authentication failure.
   ///This value is `null` if the protocol doesn’t use responses to indicate an authentication failure.
   ///
   ///**NOTE**: available only on iOS.
-  URLResponse_? failureResponse,
+  var URLResponse_? failureResponse,
 
   ///The proposed credential for this challenge.
   ///This method returns `null` if there is no default credential for this challenge.
@@ -214,17 +216,17 @@ class HttpAuthenticationChallenge_({
   ///If the proposed credential is not nil and returns true when you call its hasPassword method, then the credential is ready to use as-is.
   ///If the proposed credential’s hasPassword method returns false, then the credential provides a default user name,
   ///and the client must prompt the user for a corresponding password.
-  URLCredential_? proposedCredential,
+  var URLCredential_? proposedCredential,
 
   ///Use [error] instead.
   @Deprecated("Use error instead")
-  String? iosError,
+  var String? iosError,
 
   ///The error object representing the last authentication failure.
   ///This value is `null` if the protocol doesn’t use errors to indicate an authentication failure.
   ///
   ///**NOTE**: available only on iOS.
-  String? error,
+  var String? error,
 }) extends URLAuthenticationChallenge_;
 
 // rapid_widgets_library-0.2.59/lib/modify_event.dart:4
@@ -243,30 +245,30 @@ class ModifyEvent({
 // scrollview_observer-1.18.2/lib/src/common/models/observe_scroll_child_model.dart:6
 class ObserveScrollChildModel({
   /// The size of child widget.
-  required double size,
+  required var double size,
 
   /// The layout offset of child widget.
-  required double layoutOffset,
+  required var double layoutOffset,
 });
 
 // camerawesome-2.0.0+1/lib/src/photofilters/rgba_model.dart:1
 class const RGBA({
-  int red = 0,
-  int green = 0,
-  int blue = 0,
-  int alpha = 0,
+  final int red = 0,
+  final int green = 0,
+  final int blue = 0,
+  final int alpha = 0,
 });
 
 // syncfusion_flutter_maps-23.2.6/lib/src/layer/vector_layers.dart:5017
 class const _MapCircleLayer({
-  required Set<MapCircle> circles,
-  required Animation<double>? animation,
-  required Color? color,
-  required double strokeWidth,
-  required Color? strokeColor,
-  required IndexedWidgetBuilder? tooltipBuilder,
-  required MapCircleLayer circleLayer,
-  required _VectorFillType fillType,
+  required final Set<MapCircle> circles,
+  required final Animation<double>? animation,
+  required final Color? color,
+  required final double strokeWidth,
+  required final Color? strokeColor,
+  required final IndexedWidgetBuilder? tooltipBuilder,
+  required final MapCircleLayer circleLayer,
+  required final _VectorFillType fillType,
 }) extends StatefulWidget {
   @override
   _MapCircleLayerState createState() => _MapCircleLayerState();

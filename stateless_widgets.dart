@@ -1,17 +1,18 @@
-// Applying the current primary constructor proposal.
+// Like the current proposal but field parameters must be explicitly marked
+// "var" or "final".
 
 // WillianKirsch-FlutterKnow/Cursos/web/flutter-folio/lib/_widgets/flexibles/seperated_flexibles.dart:5
 class const SeparatedRow({
   super.key,
-  List<Widget> children,
-  Widget Function() separatorBuilder,
-  MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
-  CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
-  MainAxisSize mainAxisSize = MainAxisSize.max,
-  VerticalDirection verticalDirection = VerticalDirection.down,
-  TextBaseline textBaseline,
-  TextDirection textDirection,
-  EdgeInsets padding,
+  final List<Widget> children,
+  final Widget Function() separatorBuilder,
+  final MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+  final CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
+  final MainAxisSize mainAxisSize = MainAxisSize.max,
+  final VerticalDirection verticalDirection = VerticalDirection.down,
+  final TextBaseline textBaseline,
+  final TextDirection textDirection,
+  final EdgeInsets padding,
 }) extends StatelessWidget {
   ...
 }
@@ -36,9 +37,9 @@ class InputWidget(
 // IKHSRF-ngabolang-mobile/lib/widgets/dark_button.dart:4
 class const DarkButton({
   super.key,
-  required Size screenSize,
-  required String buttonText,
-  required Function buttonTap,
+  required final Size screenSize,
+  required final String buttonText,
+  required final Function buttonTap,
 }) extends StatelessWidget {
   ...
 }
@@ -56,19 +57,19 @@ abstract class const PageWidget(
   /// The title of the testing page
   ///
   /// It will be shown on the main page as the text on the link which opens the page.
-  String title,
+  final String title,
 
   /// The key of the ListTile that navigates to the page.
   ///
   /// Used by the integration test to navigate to the corresponding page.
-  ValueKey<String> tileKey, {
+  final ValueKey<String> tileKey, {
   super.key,
 }) extends StatelessWidget;
 
 // hemish11-carbon-12/lib/screens/elements_detail_page/components/element_image_tile.dart:4
 class const ElementImageTile({
   super.key,
-  required String url,
+  required final String url,
 }) extends StatelessWidget {
   ...
 }
@@ -83,7 +84,7 @@ class const LatestTournamentsAppBarBookmarksButton({
 // RafaelBarbosatec-flutter_news/lib/pages/news/widgets/notice_widget.dart:8
 class const NoticeWidget({
   super.key,
-  required Notice item,
+  required final Notice item,
 }) extends StatelessWidget {
   ...
 }
@@ -92,8 +93,8 @@ class const NoticeWidget({
 @immutable
 class const EditBoardPoint({
   super.key,
-  required BoardPoint boardPoint,
-  ValueChanged<Color>? onColorSelection,
+  required final BoardPoint boardPoint,
+  final ValueChanged<Color>? onColorSelection,
 }) extends StatelessWidget {
   ...
 }
@@ -102,7 +103,7 @@ class const EditBoardPoint({
 ///Adds space Horiz0ntally
 class const HorizontalSpacing({
   super.key,
-  required double of,
+  required final double of,
 }) extends StatelessWidget {
   ...
 }
@@ -114,7 +115,7 @@ class const AutocompleteBasicExample({super.key}) extends StatelessWidget {
 
 // cryptoplease-cryptoplease-dart/packages/espressocash_app/lib/features/onboarding/src/widgets/onboarding_notice.dart:65
 class const _Content({
-  required VoidCallback onPressed,
+  required final VoidCallback onPressed,
 }) extends StatelessWidget {
   ...
 }
@@ -123,8 +124,8 @@ class const _Content({
 @RoutePage()
 class const PayFlowScreen({
   super.key,
-  required VoidCallback onLink,
-  required VoidCallback onManual,
+  required final VoidCallback onLink,
+  required final VoidCallback onManual,
 }) extends StatelessWidget {
   ...
 }
@@ -145,7 +146,7 @@ class NovelDetailRecommendView(
 class const PasswordGeneratorScreen({
   super.key,
   /// Either a 'Done' for using in a form field, or 'Save as Default'
-  FinishButtonStyle? finishButton;
+  final FinishButtonStyle? finishButton;
 }) extends StatelessWidget {
   ...
 }
